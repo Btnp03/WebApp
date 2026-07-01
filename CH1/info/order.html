@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Cat Cafe">
+        <meta name="keywords" content="cafe,cake,bakery">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Cat Haven Cafe</title>
+    </head>
+
+    <body>
+        <h1 align="center" >Cat Haven Cafe</h1>
+        <h2 align="center" >Order Form</h2>
+        <hr>
+
+        <table cellpadding="15">
+            <tr>
+                <th>Explore Our Cafe</th>
+                <td>
+                    <a href="../index.html">Homepage</a>
+                </td>
+                <td>
+                    <a href="menu.html">Menu</a>
+                </td>
+                <td>
+                    <a href="order.html">Order</a>
+                </td>
+                
+            </tr>
+        </table>
+
+        <form>
+
+            <label for="fname">Full Name:</label><br>
+            <input type="text" id="fname" name="fname">
+
+            <br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone">
+            
+            <br><br>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" cols="40"></textarea>
+
+            <br><br>
+
+            <label>Delivery Date :</label><br>
+            <input type="date">
+
+            <br>
+
+            <label>Delivery Time :</label><br>
+            <input type="time"><br>
+
+            <br><br>
+
+            <label>Menu :</label><br>
+
+            <select>
+                <option value="">Select a menu item</option>
+                <option>French Fries</option>
+                <option>Pasta</option>
+                <option>Chocolate Cake</option>
+                <option>Nuggets</option>
+                <option>Beef Steak</option>
+                <option>Cheese Cake</option>
+            </select> 
+
+            <br><br>
+
+            <label>Quantity :</label>
+            <input type="number" min="1">
+
+            <br><br>
+
+            <input type="submit" value="Order">
+            <input type="reset" value="Clear">
+
+        </form>
+        
+    </body>
+</html>
