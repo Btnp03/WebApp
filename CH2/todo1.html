@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#eee;
+            font-family:Arial,sans-serif;
+        }
+
+        .card{
+            width:290px;
+            background:#fff;
+            box-shadow:0 2px 8px rgba(0,0,0,.2);
+            text-align:center;
+        }
+
+        .card img{
+            width:100%;
+            height:170px;
+            object-fit:cover;
+            object-position: center top;
+            display:block;
+        }
+
+        .card h1{
+            margin:20px 0 12px;
+            font-size:32px;
+            font-weight:400;
+        }
+
+        .card .title{
+            color:#888;
+            margin-bottom:18px;
+        }
+
+        .card .school{
+            font-weight:600;
+            margin-bottom:20px;
+        }
+
+        .card .contact{
+            background:#000;
+            color:#fff;
+            padding:16px 0;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="img/images.jpg" alt="Profile">
+
+        <h1>Ishikawa Mayu</h1>
+
+        <p class="title">Volleyball Player &amp; Japan Team</p>
+
+        <p class="school">Igor Novara</p>
+
+        <p class="contact">Contact</p>
+    </div>
+
+</body>
+</html>

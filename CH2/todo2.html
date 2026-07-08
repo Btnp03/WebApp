@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:#eee;
+        }
+
+        .card{
+            width:260px;
+            padding:20px;
+            text-align:center;
+            border-radius:20px;
+            color:#fff;
+            background:linear-gradient(180deg,#c238ff,#8d15e8);
+            box-shadow:0 8px 20px rgba(0,0,0,.2);
+        }
+
+        .avatar{
+            width:140px;
+            height:140px;
+            border-radius:50%;
+            border:4px solid #fff;
+            object-fit:cover;
+            margin:0 auto 20px;
+            display:block;
+        }
+
+        h2{
+            margin-bottom:5px;
+        }
+
+        .location{
+            opacity:.85;
+            margin-bottom:18px;
+        }
+
+        .job{
+            line-height:1.5;
+            margin-bottom:25px;
+        }
+
+        .btn{
+            display:block;
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:6px;
+            background:#fff;
+            color:#555;
+            font-size:16px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="img/images001.jpg" alt="Profile" class="avatar">
+
+        <h2>Ishikawa Yuki</h2>
+        <p class="location">Aichi, Japan</p>
+        <p class="job">User Interface Designer and<br>front-end developer</p>
+
+        <button class="btn">Message</button>
+    </div>
+
+</body>
+</html>
