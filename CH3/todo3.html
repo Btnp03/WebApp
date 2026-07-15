@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Post - พิมพิชญา ก๊กรัมย์ (Display & Position)</title>
+<style>
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+ 
+  .fb-post {
+    width: 560px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative; 
+  }
+
+  .profile-pic {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(45deg, #ff9f43, #ff5252);
+    border-radius: 50%;
+    display: block; 
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #050505;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .user-name:hover { text-decoration: underline; }
+
+  .post-time {
+    font-size: 12px;
+    color: #65676b;
+    margin-top: 2px;
+  }
+
+  
+  .menu-dots {
+    position: absolute;
+    right: 4px;
+    top: -2px;
+    font-size: 18px;
+    color: #65676b;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
+  
+  .post-text {
+    font-size: 15px;
+    color: #050505;
+    line-height: 1.45;
+    white-space: pre-line;
+  }
+
+  
+  .post-image-container {
+    width: 100%;
+    height: 340px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f0f2f5;
+  }
+
+  .post-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  
+  .post-stats {
+    display: flex;
+    justify-content: space-between;
+    color: #65676b;
+    font-size: 13px;
+    padding: 6px 2px;
+    border-bottom: 1px solid #e4e6eb;
+  }
+
+  .reaction-icons {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  
+  .post-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+  }
+
+  .action-button {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    color: #65676b;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+  }
+
+  .action-button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .btn-icon {
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="fb-post">
+    
+    <div class="post-header">
+      <div class="profile-pic"></div>
+      <div class="user-info">
+        <span class="user-name">Volleyball Thailand Fanclub 🏐🇹🇭 <span style="color:#1877f2; font-size:12px;">✔️</span></span>
+        <span class="post-time">2 ชม. · 🌎</span>
+      </div>
+      
+      <div class="menu-dots">•••</div>
+    </div>
+
+    
+    <div class="post-text">
+      ท็อปฟอร์มสุดๆ! 🔥 คว้า MVP ประจำแมตช์ 👑
+      
+      "บีม" พิมพิชญา ก๊กรัมย์ 🇹🇭 บีหลังทรงพลังของทีมชาติไทย ระเบิดฟอร์มทำแต้มสูงสุดพาทีมคว้าชัยชนะนัดสำคัญได้สำเร็จ! ทั้งจังหวะขึ้นตีหัวเสาและตำแหน่งบีหลังดุดันจนบล็อกคู่แข่งต้านไว้ไม่อยู่จริงๆ 🏐💥
+      
+      มาร่วมส่งหัวใจ ❤️ และกดไลก์ 👍 เป็นกำลังใจให้ทัพนักตบสาวไทยในรอบต่อไปกันครับ! 🚀✨ 
+      
+      #พิมพิชญาก๊กรัมย์ #วอลเลย์บอลหญิงทีมชาติไทย #บีมพิมพิชญา #VolleyballThailand
+    </div>
+
+    
+    <div class="post-image-container">
+      <img class="post-image" src="img/img1.png" alt="Pimpichaya Kokram">
+    </div>
+
+    
+    <div class="post-stats">
+      <div class="reaction-icons">
+        <span>👍❤️😮 3.4K</span>
+      </div>
+      <div>
+        <span>245 ความคิดเห็น · 89 แชร์</span>
+      </div>
+    </div>
+
+    <div class="post-actions">
+      <div class="action-button">
+        <span class="btn-icon">👍</span> ถูกใจ
+      </div>
+      <div class="action-button">
+        <span class="btn-icon">💬</span> แสดงความคิดเห็น
+      </div>
+      <div class="action-button">
+        <span class="btn-icon">↪️</span> แชร์
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

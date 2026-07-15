@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ชิวๆ Chat App (Flexbox Layout)</title>
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+
+  .chat-app {
+    display: flex;
+    width: 850px;
+    height: 580px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+
+ 
+  aside {
+    width: 280px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside header {
+    padding: 24px 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #2d3748;
+    border-bottom: 1px solid #edf2f7;
+  }
+
+  .chat-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chat-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #f7fafc;
+    cursor: pointer;
+    gap: 12px;
+    transition: background-color 0.2s;
+  }
+
+  .chat-item:hover, .chat-item.active {
+    background-color: #edf2f7;
+  }
+
+
+  .avatar {
+    width: 42px;
+    height: 42px;
+    background-color: #4a5568;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .chat-item:nth-child(1) .avatar { background: #3182ce; }
+  .chat-item:nth-child(2) .avatar { background: #38a169; }
+  .chat-item:nth-child(3) .avatar { background: #e53e3e; }
+
+  .chat-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .chat-name {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: #2d3748;
+  }
+
+  .chat-preview {
+    font-size: 12.5px;
+    color: #718096;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    margin-top: 2px;
+  }
+
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+  }
+
+  main header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #edf2f7;
+    background-color: #ffffff;
+  }
+
+
+  .message-area {
+    flex-grow: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #f7fafc;
+  }
+
+  /* กล่องข้อความแชทสไตล์มินิมอล ชิวๆ ชิดซ้าย-ขวาด้วย Flexbox align-self */
+  .message {
+    max-width: 65%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #2d3748;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+
+  .message.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+    border-top-left-radius: 4px;
+  }
+
+  .message.sent {
+    background-color: #3182ce;
+    color: #ffffff;
+    align-self: flex-end;
+    border-top-right-radius: 4px;
+  }
+
+  .message-time {
+    font-size: 10px;
+    margin-top: 4px;
+    display: block;
+    text-align: right;
+    color: #a0aec0;
+  }
+  
+  .message.sent .message-time {
+    color: #ebf8ff;
+  }
+
+  /* กล่องพิมพ์ข้อความด้านล่างใช้ Semantic Tag <footer> */
+  footer {
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid #edf2f7;
+  }
+
+  footer input {
+    flex-grow: 1; /* ขยายช่องป้อนข้อความให้เต็มพื้นที่ที่เหลือตามหลัก Flexbox */
+    padding: 12px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    outline: none;
+    font-size: 14px;
+    background-color: #f7fafc;
+    transition: border-color 0.2s;
+  }
+
+  footer input:focus {
+    border-color: #3182ce;
+    background-color: #ffffff;
+  }
+
+  footer button {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+
+  footer button:hover {
+    background-color: #2b6cb0;
+  }
+</style>
+</head>
+<body>
+
+  <div class="chat-app">
+    <!-- แถบรายชื่อฝั่งซ้าย -->
+    <aside>
+      <header>ข้อความแชท</header>
+      <div class="chat-list">
+        <div class="chat-item active">
+          <div class="avatar"></div>
+          <div class="chat-info">
+            <span class="chat-name">กลุ่มเชียร์ วอลเลย์บอลไทย 🏐</span>
+            <span class="chat-preview">พิมพิชญาฟอร์มดีมากนัดนี้!</span>
+          </div>
+        </div>
+        <div class="chat-item">
+          <div class="avatar"></div>
+          <div class="chat-info">
+            <span class="chat-name">สมศักดิ์ ข่าวกีฬา</span>
+            <span class="chat-preview">ส่งรูปไฮไลท์การแข่งให้แล้วนะชิวๆ</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ช่องแชทหลักฝั่งขวา -->
+    <main>
+      <header>
+        <div class="avatar"></div>
+        <div class="chat-info">
+          <span class="chat-name" style="font-size: 16px;">กลุ่มเชียร์ วอลเลย์บอลไทย 🏐</span>
+          <span class="chat-preview" style="color: #38a169; margin: 0;">กำลังใช้งาน</span>
+        </div>
+      </header>
+
+      <div class="message-area">
+        <div class="message received">
+          ทุกคนดูแมตช์ล่าสุดยัง บีม พิมพิชญา ก๊กรัมย์ ตบกระจายเลย ชิวๆ สบายๆ มาก สมฐานะบีหลังตัวหลักทีมชาติไทย 🇹🇭🔥
+          <span class="message-time">14:15 น.</span>
+        </div>
+        
+        <div class="message sent">
+          ดูแล้วครับ! ชอบจังหวะขึ้นตีหัวเสากับบีหลังมาก บล็อกฝั่งตรงข้ามเอาไม่อยู่เลย โคตรชิวโคตรดุดัน 🚀🏐
+          <span class="message-time">14:17 น.</span>
+        </div>
+
+        <div class="message received">
+          ใช่ๆ สถิตินัดนี้ทำแต้มสูงสุดของทีมด้วยนะ เดี๋ยวส่งลิงก์ไฮไลท์ให้ดูในโพสต์เฟสบุ๊คต่อเลย!
+          <span class="message-time">14:18 น.</span>
+        </div>
+      </div>
+
+      <footer>
+        <input type="text" placeholder="พิมพ์ข้อความชิวๆ ตรงนี้...">
+        <button>ส่งแชท</button>
+      </footer>
+    </main>
+  </div>
+
+</body>
+</html>
