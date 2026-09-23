@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); /* พื้นหลังไล่สี */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้กล่องข้อความ */
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    color: #ff5722;
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* ตกแต่งปุ่ม */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px; /* ปุ่มโค้งมน */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
+}
+
+.btn:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px); /* ชี้แล้วปุ่มเด้งขึ้น */
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #ff5722;
+    border: 2px solid #ff5722;
+}
+
+.btn-secondary:hover {
+    background-color: #fff0eb;
+}
+
+/* ตกแต่งรายการอาหารให้เป็นแบบการ์ด */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #eee;
+    transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+    border-color: #ff5722;
+    background-color: #fff9f7;
+}
+
+.menu-name {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.menu-price {
+    color: #ff5722;
+    font-weight: 500;
+}
