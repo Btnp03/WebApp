@@ -1,0 +1,176 @@
+/* src/index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Layout สองฝั่ง: ด้านซ้ายเป็น Sidebar ปุ่ม Home/Menu, ด้านขวาเป็นเนื้อหา */
+.main-layout-container {
+  display: flex;
+  min-height: 100vh;
+  padding: 40px;
+  gap: 30px;
+}
+
+/* Sidebar ปุ่มด้านซ้ายตามรูปสไลด์หน้า 23 */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 140px;
+}
+
+.nav-btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #4ba3be;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+  background-color: #3b8a9e;
+}
+
+.nav-btn.active {
+  background-color: #2c7285;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ฝั่งเนื้อหาทางขวา */
+.content-area {
+  flex: 1;
+  max-width: 600px;
+}
+
+.home-page-box {
+  border: 2px solid #6ac5d8;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+/* กรอบสีฟ้า Our Menu ตามรูปในสไลด์หน้า 23 */
+.food-container-card {
+  border: 2px solid #6ac5d8;
+  border-radius: 4px;
+  padding: 24px 30px;
+  background-color: #ffffff;
+}
+
+.our-menu-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #111111;
+  margin-bottom: 20px;
+}
+
+/* รายการอาหาร */
+.food-list {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin-bottom: 25px;
+}
+
+.food-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.food-text {
+  color: #222222;
+}
+
+.bestseller-icon {
+  font-size: 18px;
+}
+
+.btn-del {
+  background-color: #efefef;
+  color: #333333;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.btn-del:hover {
+  background-color: #e0e0e0;
+}
+
+/* ฟอร์ม New Food */
+.new-food-section {
+  border-top: 1px solid #eeeeee;
+  padding-top: 20px;
+}
+
+.new-food-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.new-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group label {
+  width: 90px;
+  font-size: 15px;
+  color: #333333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 5px 8px;
+  border: 1px solid #a6a6a6;
+  border-radius: 2px;
+  font-size: 14px;
+  width: 220px;
+}
+
+.btn-add-menu {
+  background-color: #efefef;
+  color: #222222;
+  border: 1px solid #adadad;
+  border-radius: 3px;
+  padding: 5px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.btn-add-menu:hover {
+  background-color: #e2e2e2;
+}
+
+.loading-text {
+  color: #666666;
+  font-style: italic;
+  padding: 10px 0;
+}
